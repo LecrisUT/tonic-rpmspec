@@ -1,0 +1,2 @@
+[package]
+summary = "GRPC over HTTP/2 implementation"

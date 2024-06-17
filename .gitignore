@@ -1,0 +1,5 @@
+*.src.rpm
+atuin/atuin-*
+atuin/v*.tar.gz
+rust-*/*.crate
+rust-*/LICENSE-*
