@@ -1,0 +1,7 @@
+[requires]
+build = [
+    "protobuf-compiler",
+]
+lib = [
+    "protobuf-compiler",
+]
