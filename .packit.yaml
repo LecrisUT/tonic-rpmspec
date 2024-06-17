@@ -29,6 +29,15 @@ packages:
     downstream_package_name: rust-tonic-types
     actions: *Actions-Package-rust2rpm
 
+  # Missing dependencies
+  rust-hyper-timeout:
+    # https://github.com/hjr3/hyper-timeout
+    paths: [ rust-hyper-timeout ]
+    specfile_path: rust-hyper-timeout.spec
+    upstream_package_name: hyper-timeout
+    downstream_package_name: rust-hyper-timeout
+    actions: *Actions-Package-rust2rpm
+
 srpm_build_deps:
   - rust2rpm
 

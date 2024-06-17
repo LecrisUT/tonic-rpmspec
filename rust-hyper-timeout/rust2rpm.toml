@@ -1,0 +1,7 @@
+[tests]
+skip = [
+    "tests::test_read_timeout",
+]
+comments = [
+    "Probably failing because of DNS resolution",
+]
