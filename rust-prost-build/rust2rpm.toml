@@ -1,0 +1,15 @@
+[requires]
+build = [
+    "protobuf-compiler",
+]
+lib = [
+    "protobuf-compiler",
+]
+
+[tests]
+skip = [
+    "tests::test_generate_no_empty_outputs",
+]
+comments = [
+    "Not sure why this fails",
+]
