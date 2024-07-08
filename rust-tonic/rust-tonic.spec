@@ -5,7 +5,7 @@
 %global crate tonic
 
 Name:           rust-tonic
-Version:        0.11.0
+Version:        0.12.0
 Release:        %autorelease
 Summary:        GRPC over HTTP/2 implementation
 
@@ -95,6 +95,30 @@ use the "prost" feature of the "%{crate}" crate.
 %files       -n %{name}+prost-devel
 %ghost %{crate_instdir}/Cargo.toml
 
+%package     -n %{name}+router-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+router-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "router" feature of the "%{crate}" crate.
+
+%files       -n %{name}+router-devel
+%ghost %{crate_instdir}/Cargo.toml
+
+%package     -n %{name}+server-devel
+Summary:        %{summary}
+BuildArch:      noarch
+
+%description -n %{name}+server-devel %{_description}
+
+This package contains library source intended for building other packages which
+use the "server" feature of the "%{crate}" crate.
+
+%files       -n %{name}+server-devel
+%ghost %{crate_instdir}/Cargo.toml
+
 %package     -n %{name}+tls-devel
 Summary:        %{summary}
 BuildArch:      noarch
@@ -117,18 +141,6 @@ This package contains library source intended for building other packages which
 use the "tls-roots" feature of the "%{crate}" crate.
 
 %files       -n %{name}+tls-roots-devel
-%ghost %{crate_instdir}/Cargo.toml
-
-%package     -n %{name}+tls-roots-common-devel
-Summary:        %{summary}
-BuildArch:      noarch
-
-%description -n %{name}+tls-roots-common-devel %{_description}
-
-This package contains library source intended for building other packages which
-use the "tls-roots-common" feature of the "%{crate}" crate.
-
-%files       -n %{name}+tls-roots-common-devel
 %ghost %{crate_instdir}/Cargo.toml
 
 %package     -n %{name}+tls-webpki-roots-devel

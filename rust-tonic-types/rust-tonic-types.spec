@@ -5,7 +5,7 @@
 %global crate tonic-types
 
 Name:           rust-tonic-types
-Version:        0.11.0
+Version:        0.12.0
 Release:        %autorelease
 Summary:        Collection of useful protobuf types that can be used with tonic
 
