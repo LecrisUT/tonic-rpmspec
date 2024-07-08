@@ -3,3 +3,16 @@ enable-all = true
 
 [package]
 summary = "GRPC over HTTP/2 implementation"
+
+[requires]
+build = [
+    "tomcli",
+]
+
+[scripts.prep]
+post = [
+    "# Remove benches",
+    "tomcli set Cargo.toml del dev-dependencies.bencher",
+    "tomcli set Cargo.toml del bench",
+    "rm -r benches benches-disabled",
+]

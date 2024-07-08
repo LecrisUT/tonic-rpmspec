@@ -14,6 +14,7 @@ URL:            https://crates.io/crates/tonic
 Source:         %{crates_source}
 
 BuildRequires:  cargo-rpm-macros >= 24
+BuildRequires:  tomcli
 
 %global _description %{expand:
 A gRPC over HTTP/2 implementation focused on high performance,
@@ -182,6 +183,10 @@ use the "zstd" feature of the "%{crate}" crate.
 %prep
 %autosetup -n %{crate}-%{version} -p1
 %cargo_prep
+# Remove benches
+tomcli set Cargo.toml del dev-dependencies.bencher
+tomcli set Cargo.toml del dev-dependencies.bencher
+rm -r benches benches-disabled
 
 %generate_buildrequires
 %cargo_generate_buildrequires -a
