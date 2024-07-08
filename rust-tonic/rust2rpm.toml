@@ -1,2 +1,5 @@
+[features]
+enable-all = true
+
 [package]
 summary = "GRPC over HTTP/2 implementation"
