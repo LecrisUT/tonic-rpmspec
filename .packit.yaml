@@ -38,36 +38,6 @@ packages:
     downstream_package_name: rust-hyper-timeout
     actions: *Actions-Package-rust2rpm
 
-  # Update dependencies
-  rust-prost:
-    paths: [ rust-prost ]
-    specfile_path: rust-prost.spec
-    upstream_package_name: prost
-    downstream_package_name: rust-prost
-    actions: &Actions-Package-fix-license-files
-      <<: *Actions-Package-rust2rpm
-      fix-spec-file:
-        - sh -c 'rust2rpm -I ${PACKIT_UPSTREAM_PACKAGE_NAME}'
-        - "sh -c 'sed -i \"s/# FIXME: no license files detected/cat license_files.txt/e\" ${PACKIT_DOWNSTREAM_PACKAGE_NAME}.spec'"
-  rust-prost-derive:
-    paths: [ rust-prost-derive ]
-    specfile_path: rust-prost-derive.spec
-    upstream_package_name: prost-derive
-    downstream_package_name: rust-prost-derive
-    actions: *Actions-Package-rust2rpm
-  rust-prost-build:
-    paths: [ rust-prost-build ]
-    specfile_path: rust-prost-build.spec
-    upstream_package_name: prost-build
-    downstream_package_name: rust-prost-build
-    actions: *Actions-Package-rust2rpm
-  rust-prost-types:
-    paths: [ rust-prost-types ]
-    specfile_path: rust-prost-types.spec
-    upstream_package_name: prost-types
-    downstream_package_name: rust-prost-types
-    actions: *Actions-Package-rust2rpm
-
 srpm_build_deps:
   - rust2rpm
 
